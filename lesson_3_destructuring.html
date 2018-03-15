@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>3. Destructuring</title>
+  </head>
+  <body>
+
+    
+
+<script>
+
+const array = [1, 2, 3, 4, 5];
+const [, first, second] = array;
+console.log(first, second);
+
+
+const [other, ...rest] = array;
+console.log(other, rest);
+
+
+const me = {
+  name: 'Andrii',
+  age: 27,
+  gender: 'male',
+  city: 'Kyiv'
+}
+const { name: firstName, age, status = 'Default' } = me;
+console.log(firstName, age, status);
+
+
+</script>
+    
+  </body>
+</html>
