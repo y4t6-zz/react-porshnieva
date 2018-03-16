@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>3. Destructuring</title>
+</head>
+<body>
+See console - Shift+Ctr+i
+<script>
+
+
+function increment(n) {
+  return n + 1;
+}
+
+
+const superIncrement = n => n + 1;
+console.log(superIncrement(2));
+
+
+const sum = (a, b) => a + b;
+console.log(sum(2, 4));
+
+
+const sayHello = () => {
+  const name = 'Katya';
+  return `Hello, ${name}!`;
+}
+console.log(sayHello());
+
+
+let a = [1, 2, 3, 4];
+// function() syntax
+const a2 = a.map(function(el) { return el * 2; });
+// () => syntax
+const superA2 = a.map(el => el * 2);
+
+
+// The main feature of the arrow functions - save context
+
+
+</script>
+</body>
+</html>
