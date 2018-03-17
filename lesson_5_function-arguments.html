@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>5. Function arguments</title>
+</head>
+<body>
+See console - Shift+Ctr+i
+<script>
+
+
+// Classic default argument
+function sayHello(name) {
+  var name2 = name || 'Noname';
+
+  console.log('Hello ' + name2 + '!!11');
+}
+sayHello();
+
+
+
+// ES6 default argument
+const superSayHello = (name = 'Noname') => (
+    console.log('Hello ' + name + '!!11')
+);
+superSayHello();
+
+
+const thirdHello = (...people) => console.log(`Hello ${people.join(', ')}!`);
+thirdHello('Vlad', 'Dmitry', 'Sergey');
+
+
+const fourthHello = (firstPerson, ...others) => console.log(`Hello ${firstPerson} and ${others.join(', ')}!`);
+fourthHello('Vlad', 'Dmitry', 'Sergey');
+
+
+
+let numbers = [1, 5, 7, 3, 9, 16];
+let max = Math.max(...numbers);
+console.log(max);
+
+
+
+let describePerson = ({ name = 'Noname', age = 0, city = 'Nowhere' }) => {
+  console.log(`Hello from ${city}! My name is ${name}, I am ${age} years old.`)
+}
+let me = {
+  city: 'Kyiv',
+  name: 'Katya',
+  age: 21
+}
+describePerson(me);
+
+
+
+</script>
+</body>
+</html>
