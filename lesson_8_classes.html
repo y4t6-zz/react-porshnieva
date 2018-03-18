@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>8. Classes</title>
+</head>
+<body>
+See console - Shift+Ctr+i
+<script>
+
+class Point {
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+  } 
+  toString() {
+    return `(${this.x}, ${this.y})`;
+  }
+}
+const point = new Point(1, 2);
+console.log(point.toString());
+class ColorPoint extends Point {
+  constructor(x, y, color) {
+    super(x, y);
+    this.color = color;
+  }
+  toString() {
+    return `${super.toString()} in ${this.color}]`;
+  }
+}
+let colorPoint = new ColorPoint(4, 2, 'red');
+console.log(colorPoint.toString());
+console.log(colorPoint instanceof ColorPoint);
+console.log(colorPoint instanceof Point);
+
+
+class Button {
+  static getElementType() {
+    return 'button';
+  }
+  constructor(color) {
+    this.color = color;
+  }
+  click() {
+    console.log('Button clicked!');
+  }
+}
+console.log( Button.getElementType() );
+const button = new Button('red');
+//console.log( button.getElementType() );
+console.log( button );
+
+
+// Getter and Setter
+class User {
+  constructor(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+  // getter
+  get fullName() {
+    return `${this.firstName} ${this.lastName}`;
+  }
+  // setter 
+  set fullName(newValue) {
+    [this.firstName, this.lastName] = newValue.split(' ');
+  }
+};
+let user = new User('Vasua', 'Pupcov');
+console.log(user.fullName);
+user.fullName = 'Ivan Petrov';
+console.log(user.fullName);
+
+</script>
+</body>
+</html>
