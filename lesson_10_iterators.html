@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>11. Iterators</title>
+</head>
+<body>
+See console - Shift+Ctr+i
+<script>
+/*
+const arr = [1, 2, 3];
+
+arr.forEach((el, index) => {
+  console.log(el, index);
+});
+
+let obj = {
+  foo: 'bar',
+  baz: 'aux'
+}
+for (let type of obj) {
+  console.log(type)
+}*/
+
+
+function createIterator(arr) {
+  let index = 0;
+  return {
+    next: function() {
+      return index < arr.length 
+        ? { value: arr[index++], done: false }
+        : { done: true };
+    }
+  }
+}
+const myIterator = createIterator(['hey', 'yo', 'ya']);
+console.log(myIterator.next());
+console.log(myIterator.next());
+console.log(myIterator.next());
+console.log(myIterator.next());
+
+
+
+
+
+</script>
+</body>
+</html>
